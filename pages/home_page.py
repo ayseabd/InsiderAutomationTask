@@ -8,8 +8,6 @@ class HomePage(BasePage):
     MENU_COMPANY = (By.LINK_TEXT, "Company")
     MENU_CAREERS = (By.LINK_TEXT, "Careers")
 
-    # def hover_job_area(self):
-    #    self.hover_element(*self.)
     def click_accept_cookies(self):
         self.click_element(*self.COOKIE_ACCEPT_BUTTON)
 
