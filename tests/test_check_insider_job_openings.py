@@ -9,11 +9,13 @@ from tests.base_test import BaseTest
 
 class TestCheckInsiderJobOpenings(BaseTest):
     def test_check_insider_job_openings(self):
+        # Visit useinsider, check homepage
         home_page = HomePage(self.driver)
         self.assertEqual(self.base_url, home_page.get_current_url(), "Insider Anasayfa Açılmadı")
         home_page.click_menu_company()
         home_page.click_sub_menu_careers()
 
+        # Check careers page and locations, teams and life at insider block
         careers_page = CareersPage(self.driver)
         careers_page.verify_locations_block()
         self.assertTrue(careers_page.verify_locations_block(), "Locations bloğu görüntülenmiyor")
@@ -22,6 +24,7 @@ class TestCheckInsiderJobOpenings(BaseTest):
         careers_page.verify_life_at_insider_block()
         self.assertTrue(careers_page.verify_life_at_insider_block(), "Life at Insider bloğu görüntülenmiyor")
 
+        # Check open positions page
         open_positions_page = OpenPositionsPage(self.driver)
         self.driver.get(self.qa_jobs_url)
         open_positions_page.click_qa_jobs_button()
@@ -36,10 +39,10 @@ class TestCheckInsiderJobOpenings(BaseTest):
         open_positions_page.click_view_role_button()
         time.sleep(4)
 
+        # Check Lever page
         lever_page = LeverPage(self.driver)
         if lever_page.switch_to_new_tab():
             lever_page.verify_lever_page()
 
-            # Yeni sekmeyi kapat ve eski sekmeye dön
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
