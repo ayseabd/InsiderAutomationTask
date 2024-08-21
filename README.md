@@ -55,9 +55,10 @@ All test scenarios have been executed successfully with the following exception:
 3. **Quality Assurance Jobs Page**: The page at `https://useinsider.com/careers/quality-assurance/` is accessed successfully. The "See all QA jobs" button works as expected. Jobs are filtered by Location: "Istanbul, Turkey" and Department: "Quality Assurance," and the job list is displayed.
 
    **Note**: There is a known issue where the Location filter only displays the "All" option if the page has not fully loaded. To mitigate this, `time.sleep` is used to wait for the page to fully load before interacting with the filters. However, this issue persists if the page is not fully loaded in time.
+   ![QA Jobs Page Screenshot](images/bug001.png)
    
-4. **Job Details Verification**: All listed jobs have their Position containing "Quality Assurance," Department containing "Quality Assurance," and Location containing "Istanbul, Turkey."
-5. **Lever Application Redirect**: Clicking the "View Role" button redirects to the Lever Application form page successfully.
+5. **Job Details Verification**: All listed jobs have their Position containing "Quality Assurance," Department containing "Quality Assurance," and Location containing "Istanbul, Turkey."
+6. **Lever Application Redirect**: Clicking the "View Role" button redirects to the Lever Application form page successfully.
 
 All other tests have passed, confirming that the application is functioning as expected, aside from the noted issue with the location filter.
 
